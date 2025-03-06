@@ -143,8 +143,9 @@ install_nvm_from_git() {
   if [ -d "$INSTALL_DIR/.git" ]; then
     # Updating repo
     nvm_echo "=> nvm is already installed in $INSTALL_DIR, trying to update using git"
-    command printf '\r=> '
-    fetch_error="Failed to update nvm with $NVM_VERSION, run 'git fetch' in $INSTALL_DIR yourself."
+    return
+    # command printf '\r=> '
+    # fetch_error="Failed to update nvm with $NVM_VERSION, run 'git fetch' in $INSTALL_DIR yourself."
   else
     fetch_error="Failed to fetch origin with $NVM_VERSION. Please report this!"
     nvm_echo "=> Downloading nvm from git to '$INSTALL_DIR'"
